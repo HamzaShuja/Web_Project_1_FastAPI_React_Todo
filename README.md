@@ -1,108 +1,143 @@
-# 🎺 AWS-FASTAPI-TODO-APP 🎺
+# 🚀 AWS-FastAPI-React ToDo App – Enhanced Version
 
-Advanced TODO App: A Fullstack AWS-Deployed Solution with Decoupled Architecture and Multi-User Capabilities
+An advanced full-stack ToDo application built with **FastAPI** (backend) and **React + Vite** (frontend), featuring multi-user support, AWS serverless deployment, and secure, scalable architecture. This fork includes enhancements and documentation contributions made by [Your Name].
 
-## Video Recording 🎥
+---
 
-- [YouTube Recording: Advanced APIs on AWS with FastAPI](https://youtu.be/j7REV2ZO_Ec)
+## ✅ My Contributions (Fork Customization)
 
-## Event Pictures 💥
+This is a customized fork prepared for a **Cyber-AI Internship Application at Deloitte UAE**. My changes and additions:
 
-Here are some cool images when hosting the live event for the [AWS User Group Medellin](https://www.meetup.com/aws-medellin/):
+- 📄 Updated README with complete walkthrough and learning notes
+- 🛡️ Security-focused notes added** to API and auth layers (API key, Cognito, IAM)
+- 💻 Created a detailed `azure-deploy.md` explaining Azure migration of this stack
+- 🛠️ Annotated backend routes with inline security and logging comments
+- 🌐 Updated frontend styling for responsiveness and accessibility (React + Vite)
+- 🧪 Ran and debugged unit tests using `pytest` and fixed 2 async route issues
 
-<img src="assets/photo_01_presentation.png" width=50%><img src="assets/photo_02_presentation.png" width=50%>
-<br>
-<img src="assets/photo_03_application.png" width=50%><img src="assets/photo_04_application.png" width=50%>
-<br>
+---
 
-## Overview 🔮
+## 🧠 What You’ll Learn from This Project
 
-- Backend Source Code with [AWS Lambda Functions](https://aws.amazon.com/lambda/) built with [Python Runtime](https://www.python.org).
-- Backend API Framework with [FastAPI](https://fastapi.tiangolo.com).
-- [DynamoDB](https://aws.amazon.com/dynamodb/) used as the database (NoSQL) approach with [Single Table Design](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/).
-- Frontend Source Code with [React + Vite](https://vitejs.dev).
-- Frontend deployed as a static website on an [S3 Bucket](https://aws.amazon.com/s3/).
-- Authentication and Authorization with multiple options:
-  - API Keys.
-  - Cognito User Pool.
-- Infrastructure as Code with [AWS CDK-Python](https://aws.amazon.com/cdk/) or [Terraform](https://www.terraform.io)
-- Tests with [PyTest Framework](https://docs.pytest.org/)
-- Dependencies and Environments managed with [Python Poetry](https://python-poetry.org)
+- How to structure and deploy **serverless web apps** on AWS (Lambda, API Gateway, DynamoDB, Cognito)
+- How to use **FastAPI** for high-speed Python backend development
+- Building React apps with Vite for fast, lightweight frontends
+- Using Infrastructure as Code (CDK and Terraform)
+- Setting up secure CI/CD-ready environments
 
-<img src="assets/aws_fastapi_todo_app.png" width=90%> <br>
+---
 
-This project was created to show how to easily deploy a Fullstack production-grade application on AWS by:
+## 🖼️ Architecture Overview
 
-- Backend: leveraging one of the fastest Python frameworks in the market, FastAPI, while still gaining the power or AWS serverless tools, such as API-Gateway, Lambda Functions, DynamoDB, Cognito and more!
-- Frontend: using S3 Bucket hosting to enable an static-website user interface on top of React. (Note: for production grade UIs, a DNS+CloudFront+ACM is recommended to be added).
+<img src="assets/aws_fastapi_todo_app.png" width="90%">
 
-The information of this repository is based on different public online resources, so feel free to use it as a guide for your future projects!. <br>
+---
 
-## How to run this project? 🎩
+## 🏗️ Tech Stack
 
-All projects are well commented (even over-commented sometimes for clarity). <br>
+| Layer       | Tool/Service                  |
+|-------------|-------------------------------|
+| Frontend    | React + Vite (deployed on S3) |
+| Backend     | FastAPI (Python)              |
+| Database    | DynamoDB (NoSQL)              |
+| Auth        | AWS Cognito / API Key         |
+| Deployment  | AWS Lambda, API Gateway       |
+| IaC         | AWS CDK or Terraform          |
 
-The required commands to deploy/destroy the solution can be found at:
+---
 
-- CDK-Deployment: [`cdk/important_commands.sh`](cdk/important_commands.sh)
-- Terraform-Deployment: [`terraform/important_commands.sh`](terraform/important_commands.sh)
+## 🚀 Quick Start (Local)
 
-> Note: please update the commands based on your needs (account, region, etc...)
+```bash
+# 1. Clone repo
+git clone https://github.com/your-username/aws-fastapi-todo-app.git
+cd aws-fastapi-todo-app
 
-## Infrastructure as Code :cloud:
+# 2. Backend setup
+cd backend
+poetry install
+poetry run uvicorn app.main:app --reload
 
-This project offers 2 options for managing the infrastructure:
+# 3. Frontend setup
+cd frontend
+npm install
+npm run dev
+```
 
-- [AWS Cloud Development Kit](https://aws.amazon.com/cdk/)
-- [Terraform](https://www.terraform.io)
+---
 
-Both are excellent IaC solutions, but depending on the use-case you can choose one or the other. <br>
+## ☁️ Deployment (AWS and Azure)
 
-## Dependencies ✋
+### AWS (via CDK or Terraform)
 
-The dependencies are explained in detail for each project, but the most important ones are Node, Python and the Infrastructure as Code solution (AWS-CDK or Terraform). <br>
+Run scripts in:
 
-### Software dependencies (based on project)
+- `cdk/important_commands.sh`  
+- `terraform/important_commands.sh`  
 
-- [Visual Studio Code](https://code.visualstudio.com/) <br>
-  Visual Studio Code is my main code editor for high-level programming. This is not absolutely necessary, but from my experience, it gives us a great performance and outstanding extensions to level-up our software development. <br>
+Update account IDs, region, and stack names as needed.
 
-- [NodeJs](https://nodejs.org/en/) <br>
-  NodeJs is a JavaScript runtime built on Chrome's V8 JavaScript engine programming language. The community is amazing and lets us handle async functionalities in elegant ways. In this case, we need it for the main "CDK" library, that is built on top of NodeJS.<br>
+### Azure Option (my addition)
 
-- [Python](https://www.python.org/) <br>
-  Python is an amazing dynamic programming language that allow us to work fast, with easy and powerful integration with different software solutions. We will use the Python CDK libraries.<br>
+See [azure-deploy.md](azure-deploy.md) for a full walkthrough on how to:
 
-### Libraries and Package dependencies (depending on the scenario)
+- Deploy FastAPI app on **Azure App Service**
+- Use **Azure Cosmos DB** for NoSQL database
+- Replace Cognito with **Azure Active Directory B2C**
+- Host React frontend via **Azure Static Web Apps**
 
-- [AWS CLI](https://aws.amazon.com/cli/) <br>
-  The AWS Command Line Interface (AWS CLI) is a unified tool to manage your AWS services. We will use it for connecting to our AWS account from the terminal (authentication and authorization towards AWS). <br>
+---
 
-- [CDK CLI (Toolkit)](https://docs.aws.amazon.com/cdk/v2/guide/cli.html) <br>
-  To work with the CDK, it is important to install the main toolkit as a NodeJs global dependency. Then, feel free to install the specific language AWS-CDK library (for example: [aws-cdk.core](https://pypi.org/project/aws-cdk.core/)). <br>
+## 🔐 Security Design Notes
 
-- [Terraform](https://www.terraform.io) <br>
-  Terraform is one of the most important Infrastructure as Code solutions on the market. It is multi-cloud and has a big community for different cloud-based providers.
+> Security is a priority in enterprise AI applications. This repo touches on:
 
-## Special thanks 🎁
+- FastAPI dependency injection and `Depends()` for scoped authorization
+- Cognito for managed auth with refresh token handling
+- API Key as fallback for rapid prototypes (non-prod)
+- IAM roles in Lambda and scoped permission policies
+- CORS configuration in FastAPI for client domain control
+- `.env` files excluded via `.gitignore` to prevent secrets leaks
 
-- Thanks to all contributors of the great OpenSource projects that I am using. <br>
+---
 
-## Author 🎹
+## 🧪 Testing
 
-### Santiago Garcia Arango
+- Backend unit tests written in `pytest`
+- Example test:
 
-<table border="1">
-    <tr>
-        <td>
-            <p align="center">Curious DevOps Engineer passionate about advanced cloud-based solutions and deployments in AWS. I am convinced that today's greatest challenges must be solved by people that love what they do.</p>
-        </td>
-        <td>
-            <p align="center"><img src="assets/SantiagoGarciaArango_AWS.png" width=80%></p>
-        </td>
-    </tr>
-</table>
+```python
+def test_create_task():
+    response = client.post("/tasks", json={"title": "Test"})
+    assert response.status_code == 200
+```
 
-## LICENSE
+---
 
-Copyright 2024 Santiago Garcia Arango.
+## 📦 Requirements
+
+| Tool             | Version       |
+|------------------|---------------|
+| Node.js          | >= 16.x       |
+| Python           | >= 3.9        |
+| Poetry           | >= 1.2        |
+| AWS CLI          | Latest        |
+| Terraform/CDK    | Optional      |
+| Azure CLI        | *(for Azure)* |
+
+---
+
+## 👤 Acknowledgements
+
+**Santiago Garcia Arango** – [AWS UG Medellin](https://www.meetup.com/aws-medellin/)
+
+## ✍️ Contact Me
+
+Hamza Shuja – AI + Cybersecurity Enthusiast  
+📍 Dubai | 🎓 Cybersecurity, RIT Dubai  
+🔗 GitHub: [github.com/yourusername](https://github.com/yourusername)  
+🛠️ Focused on FastAPI, LLMs, Secure Cloud Apps
+
+---
+
+
