@@ -1,12 +1,11 @@
 # 🚀 AWS-FastAPI-React ToDo App – Enhanced Version
 
-An advanced full-stack ToDo application built with **FastAPI** (backend) and **React + Vite** (frontend), featuring multi-user support, AWS serverless deployment, and secure, scalable architecture. This fork includes enhancements and documentation contributions made by [Your Name].
+An advanced full-stack ToDo application built with **FastAPI** (backend) and **React + Vite** (frontend), featuring multi-user support, AWS serverless deployment, and secure, scalable architecture. 
 
 ---
 
-## ✅ My Contributions (Fork Customization)
+## ✅ My Contributions 
 
-This is a customized fork prepared for a **Cyber-AI Internship Application at Deloitte UAE**. My changes and additions:
 
 - 📄 Updated README with complete walkthrough and learning notes
 - 🛡️ Security-focused notes added** to API and auth layers (API key, Cognito, IAM)
