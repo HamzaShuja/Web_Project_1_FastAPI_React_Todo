@@ -134,9 +134,7 @@ def test_create_task():
 
 Hamza Shuja – AI + Cybersecurity Enthusiast  
 📍 Dubai | 🎓 Cybersecurity, RIT Dubai  
-🔗 GitHub: [github.com/yourusername](https://github.com/yourusername)  
+🔗 GitHub: https://github.com/HamzaShuja  
 🛠️ Focused on FastAPI, LLMs, Secure Cloud Apps
-
----
 
 
